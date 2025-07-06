@@ -42,9 +42,9 @@ export default ({ mode }) => {
     }
   }
 
-  const base = "/"
-  const root = "./"
-  const outDir = "dist"
+  const base = '/'
+  const root = './'
+  const outDir = 'dist'
 
   const config = {
     base: base, // 编译后js导入的资源路径
@@ -109,7 +109,13 @@ export default ({ mode }) => {
         ]
       }),
       vuePlugin(),
-      svgBuilder(['./src/plugin/','./src/assets/icons/'],base, outDir,'assets', NODE_ENV),
+      svgBuilder(
+        ['./src/plugin/', './src/assets/icons/'],
+        base,
+        outDir,
+        'assets',
+        NODE_ENV
+      ),
       [Banner(`\n Build based on gin-vue-admin \n Time : ${timestamp}`)],
       VueFilePathPlugin('./src/pathInfo.json')
     ]

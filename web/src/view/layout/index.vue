@@ -2,14 +2,6 @@
   <div
     class="bg-gray-50 text-slate-700 dark:text-slate-500 dark:bg-slate-800 w-screen h-screen"
   >
-    <el-watermark
-      v-if="config.show_watermark"
-      :font="font"
-      :z-index="9999"
-      :gap="[180, 150]"
-      class="absolute inset-0 pointer-events-none"
-      :content="userStore.userInfo.nickName"
-    />
     <gva-header />
     <div class="flex flex-row w-full gva-container pt-16 box-border h-full">
       <gva-aside
@@ -41,7 +33,6 @@
               </transition>
             </div>
           </router-view>
-          <BottomInfo />
         </div>
       </div>
     </div>
@@ -53,7 +44,6 @@
   import GvaHeader from '@/view/layout/header/index.vue'
   import useResponsive from '@/hooks/responsive'
   import GvaTabs from './tabs/index.vue'
-  import BottomInfo from '@/components/bottomInfo/bottomInfo.vue'
   import { emitter } from '@/utils/bus.js'
   import { ref, onMounted, nextTick, reactive, watchEffect } from 'vue'
   import { useRouter, useRoute } from 'vue-router'
